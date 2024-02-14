@@ -27,7 +27,9 @@ class LoginFragment : Fragment() {
 
         binding.login.setOnClickListener {
             if (binding.username.text.toString() == "admin" && binding.password.text.toString() == "admin") {
-
+                binding.username.text.clear()
+                binding.password.text.clear()
+                findNavController().navigate(R.id.action_loginFragment_to_productListFragment)
             } else {
                 Toast.makeText(context, "Login Failed.", Toast.LENGTH_LONG).show()
             }
